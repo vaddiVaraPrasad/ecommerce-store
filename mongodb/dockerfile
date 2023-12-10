@@ -1,0 +1,21 @@
+# Use the official MongoDB image from Docker Hub
+FROM mongo
+
+# Set environment variables
+ENV MONGO_INITDB_ROOT_USERNAME=varaprasad
+ENV MONGO_INITDB_ROOT_PASSWORD=Vachira@04
+ENV MONGO_INITDB_DATABASE=ecommerce-shop
+
+
+# Expose the default MongoDB port
+EXPOSE 27017
+
+VOLUME ["mongodb_data:/data/db"]
+
+# Command to run when the container starts
+CMD ["mongod"]
+
+
+## to run the mongodb
+# docker build -t mymongoimage .
+# docker run --name mymongocontainer -p 27017:27017 -d mymongoimage
